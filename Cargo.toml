@@ -1,0 +1,20 @@
+[package]
+name = "heap_allocator"
+version = "0.1.0"
+authors = ["panguangze <guangzep@gmail.com>"]
+edition = "2018"
+license = "Apache-2.0/MIT"
+description = "Allocators from no_std systems. It provide some simple allocators"
+keywords = ["allocator", "no_std", "malloc", "heap", "kernel"]
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = ["use_spin"]
+use_spin = ["spinning_top"]
+
+[dependencies.spinning_top]
+version = "0.1.0"
+features = ["nightly"]
+optional = true
